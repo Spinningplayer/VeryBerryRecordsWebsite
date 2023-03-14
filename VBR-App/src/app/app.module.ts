@@ -7,6 +7,8 @@ import { ContactComponent } from './body-container/contact/contact.component';
 import { AgendaComponent } from './body-container/agenda/agenda.component';
 import { ArtistsComponent } from './body-container/artists/artists.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './body-container/home/home.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
   {path: 'agenda', component: AgendaComponent},
@@ -21,7 +23,9 @@ const appRoutes: Routes = [
     BodyContainerComponent,
     ContactComponent,
     AgendaComponent,
-    ArtistsComponent
+    ArtistsComponent,
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

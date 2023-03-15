@@ -1,6 +1,12 @@
 .masthead-brand {
+  margin-top: 1rem;
   width: 50pt;
   height: 50pt;
+  transition: 0.3s;
+}
+
+.masthead-brand:hover {
+  opacity: 0.5;
 }
 
 .nav-item {
@@ -10,6 +16,15 @@
   font-weight: 500;
   line-height: 2.2rem;
   letter-spacing: 0.044rem;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: white;
+  transition: 0.3s;
+}
+
+.active-link {
+  color: lightgrey;
+}
+
+.nav-item:hover {
+  color: grey;
 }

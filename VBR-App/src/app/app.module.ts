@@ -14,6 +14,7 @@ const appRoutes: Routes = [
   {path: 'agenda', component: AgendaComponent},
   {path: 'artists', component: ArtistsComponent},
   {path: 'contact', component: ContactComponent},
+  {path: '', component: HomeComponent}
 ]
 
 @NgModule({

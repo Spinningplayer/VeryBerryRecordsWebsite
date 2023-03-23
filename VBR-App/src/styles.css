@@ -6,7 +6,12 @@
     --primary-shadow: #1D1D1B;
   }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
     background-color: #1D1D1B;
     color: white;
+    height: 100%;
 }

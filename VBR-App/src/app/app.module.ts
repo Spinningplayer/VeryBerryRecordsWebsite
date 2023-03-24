@@ -13,6 +13,7 @@ import { ArtistCardComponent } from './body-container/artists/artist-card/artist
 import { HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ArtistPageComponent } from './body-container/artist-page/artist-page.component';
+import { ArtistShowTablerowComponent } from './body-container/artist-page/artist-show-tablerow/artist-show-tablerow.component';
 
 const appRoutes: Routes = [
   {path: 'agenda', component: AgendaComponent},
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
     FooterComponent,
     ArtistCardComponent,
     PageNotFoundComponent,
-    ArtistPageComponent
+    ArtistPageComponent,
+    ArtistShowTablerowComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+/* @font-face {
+  font-family: helvetica;
+  src: url();
+} */
+
+@import "./font-awesome.css";
+
 :root {
     /* --primary: #30539b;
     --primary-shadow: #223c72; */
@@ -13,5 +20,6 @@ html {
 body {
     background-color: #1D1D1B;
     color: white;
-    height: 100%;
+    min-height: 100%;
+    font-family: helvetica;
 }

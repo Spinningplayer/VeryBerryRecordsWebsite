@@ -4,6 +4,8 @@ export class Show {
     public date!: Date;
     public city!: string;
     public artistID!: number;
+    public expired!: boolean;
+    public ticketLink!: string;
 
     constructor(values: Object = {}) {
         Object.assign(this, values)

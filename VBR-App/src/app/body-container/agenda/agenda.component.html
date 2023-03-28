@@ -1,6 +1,16 @@
 <div class="container">
     <div class="row align-items-center">
-        
+        <table class="table">
+            <thead>
+                <th>Datum</th>
+                <th>Artiest</th>
+                <th>Venue</th>
+                <th>Tickets</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let show of shows" app-show-card [show]="show"></tr>
+            </tbody>
+        </table>
     </div>
 </div>
 

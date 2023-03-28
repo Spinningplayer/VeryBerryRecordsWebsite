@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ArtistPageComponent } from './body-container/artist-page/artist-page.component';
 import { ArtistShowTablerowComponent } from './body-container/artist-page/artist-show-tablerow/artist-show-tablerow.component';
+import { ShowCardComponent } from './body-container/agenda/show-card/show-card.component';
 
 const appRoutes: Routes = [
   {path: 'agenda', component: AgendaComponent},
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     ArtistCardComponent,
     PageNotFoundComponent,
     ArtistPageComponent,
-    ArtistShowTablerowComponent
+    ArtistShowTablerowComponent,
+    ShowCardComponent
   ],
   imports: [
     BrowserModule,

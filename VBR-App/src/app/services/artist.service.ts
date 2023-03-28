@@ -27,17 +27,24 @@ export class ArtistService {
         venue: "Mezz Breda",
         date: new Date("06-05-2022"),
         city: "Breda",
-        artistID: 0},
+        artistID: 0,
+        expired: true,
+        ticketLink: ""
+      },
         {id: 1,
         venue: "Breda Barst",
         date: new Date("09-19-2022"),
         city: "Breda",
-        artistID: 0},
+        artistID: 0,
+        expired: true,
+        ticketLink: ""},
         {id: 2,
           venue: "Little Devil",
           date: new Date("02-10-2023"),
           city: "Tilburg",
-          artistID: 0}
+          artistID: 0,
+          expired: true,
+          ticketLink: ""}
       ]
     },
     {
@@ -57,7 +64,9 @@ export class ArtistService {
         venue: "Hall of Fame",
         date: new Date("05-06-2022T20:30:00.00Z"),
         city: "Tilburg",
-        artistID: 1}
+        artistID: 1,
+        expired: true,
+        ticketLink: ""}
       ]
     },]
 

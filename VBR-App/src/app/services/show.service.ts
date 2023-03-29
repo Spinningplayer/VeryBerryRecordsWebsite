@@ -13,7 +13,8 @@ export class ShowService {
       date: new Date("06-05-2022"),
       city: "Breda",
       artistID: 0,
-      expired: true,
+      artistName: "Jay Marten",
+      expired: false,
       ticketLink: ""
     },
     {
@@ -22,7 +23,8 @@ export class ShowService {
       date: new Date("09-18-2022"),
       city: "Breda",
       artistID: 0,
-      expired: true,
+      artistName: "Jay Marten",
+      expired: false,
       ticketLink: ""
     }
   ]

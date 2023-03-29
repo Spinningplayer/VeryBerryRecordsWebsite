@@ -1,1 +1,5 @@
-<p>show-card works!</p>
+<td>{{ show?.date | date: "dd/MM/yyyy" }}</td>
+<td><a (click)="toArtist()">{{show?.artistName}}</a></td>
+<td>{{show?.venue}}</td>
+<td *ngIf="!show?.expired"><button class="btn-primary dblock" (click)="toTickets()">Tickets</button></td>
+<td *ngIf="show?.expired"><button class="btn-disabled" disabled>Tickets</button></td>

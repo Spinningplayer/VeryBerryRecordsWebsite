@@ -4,6 +4,7 @@ export class Show {
     public date!: Date;
     public city!: string;
     public artistID!: number;
+    public artistName!: string;
     public expired!: boolean;
     public ticketLink!: string;
 

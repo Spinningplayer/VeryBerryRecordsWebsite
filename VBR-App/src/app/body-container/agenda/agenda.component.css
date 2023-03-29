@@ -1,12 +1,31 @@
 .container {
     flex:1;
+    margin-top: 4rem;
+}
+
+.table-container {
+    color: white;
+    background-color: #282828;
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px black;
+    padding: 2rem;
+    margin-bottom: 42rem;
 }
 
 .table {
     color: white;
-    background-color: #282828;
 }
 
-th {
+thead {
     padding: 1rem;
+}
+
+.btn {
+    color: white;
+    background-color: #1f1f1f;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: white;
 }

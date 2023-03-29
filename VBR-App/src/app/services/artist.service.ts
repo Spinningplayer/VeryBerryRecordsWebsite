@@ -28,6 +28,7 @@ export class ArtistService {
         date: new Date("06-05-2022"),
         city: "Breda",
         artistID: 0,
+        artistName: "Jay Marten",
         expired: true,
         ticketLink: ""
       },
@@ -36,6 +37,7 @@ export class ArtistService {
         date: new Date("09-19-2022"),
         city: "Breda",
         artistID: 0,
+        artistName: "Jay Marten",
         expired: true,
         ticketLink: ""},
         {id: 2,
@@ -43,6 +45,7 @@ export class ArtistService {
           date: new Date("02-10-2023"),
           city: "Tilburg",
           artistID: 0,
+          artistName: "Jay Marten",
           expired: true,
           ticketLink: ""}
       ]
@@ -54,9 +57,9 @@ export class ArtistService {
       shortDescription: "Western and eastern folk combined with poetic lyrics and soulfull melodies",
       spotifyPlaylist: "https://open.spotify.com/embed/artist/6YWZXgJnIkhmLN7GYX3sF4?utm_source=generator&theme=0",
       youtubeLink: "https://www.youtube.com/embed/un85CccavKs?t=9",
-      instagramLink: "",
+      instagramLink: "https://www.instagram.com/aramusic/",
       facebookLink: "",
-      driveLink: "",
+      driveLink: "https://drive.google.com/drive/folders/1AU3Bq8WYukNg6ZTRYa7TDmWrxSVjdbfj?usp=sharing",
       pressPic: "../../../assets/Ara/Ara-PressPic.png",
       urlName: "ara",
       shows: [
@@ -65,6 +68,7 @@ export class ArtistService {
         date: new Date("05-06-2022T20:30:00.00Z"),
         city: "Tilburg",
         artistID: 1,
+        artistName: "Ara",
         expired: true,
         ticketLink: ""}
       ]

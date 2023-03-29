@@ -18,7 +18,6 @@ export class ArtistCardComponent implements OnInit {
   }
 
   selectArtist() {
-    console.log("Click")
     this._router.navigateByUrl('/artist/'+this.artist?.urlName)
   }
 

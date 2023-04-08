@@ -11,7 +11,7 @@ import { ArtistService } from 'src/app/services/artist.service';
 export class ArtistCardComponent implements OnInit {
   @Input() artist!: Artist | undefined;
 
-  constructor(private artistService: ArtistService, private _router: Router) { }
+  constructor( private _router: Router) { }
 
   ngOnInit(): void {
 

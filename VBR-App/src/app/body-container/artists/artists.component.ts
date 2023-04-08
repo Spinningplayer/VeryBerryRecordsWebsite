@@ -14,7 +14,10 @@ export class ArtistsComponent implements OnInit {
   constructor(private artistService: ArtistService) { }
 
   ngOnInit(): void {
-    this.artists = this.artistService.artists
+    this.artistService.getArtists().then(response => {
+      console.log(response)
+      this.artists = response!
+    })
   }
 
 }

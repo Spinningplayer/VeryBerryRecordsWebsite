@@ -3,7 +3,7 @@ export class Show {
     public venue!: string;
     public date!: Date;
     public city!: string;
-    public artistID!: number;
+    public artistID!: string;
     public artistName!: string;
     public expired!: boolean;
     public ticketLink!: string;

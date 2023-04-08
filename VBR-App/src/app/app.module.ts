@@ -16,6 +16,8 @@ import { ArtistPageComponent } from './body-container/artist-page/artist-page.co
 import { ArtistShowTablerowComponent } from './body-container/artist-page/artist-show-tablerow/artist-show-tablerow.component';
 import { ShowCardComponent } from './body-container/agenda/show-card/show-card.component';
 import { DatePipe } from '@angular/common';
+import { ArtistService } from './services/artist.service';
+import { ShowService } from './services/show.service';
 
 const appRoutes: Routes = [
   {path: 'agenda', component: AgendaComponent},
@@ -49,7 +51,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   exports: [RouterModule],
-  providers: [DatePipe],
+  providers: [DatePipe, ArtistService, ShowService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

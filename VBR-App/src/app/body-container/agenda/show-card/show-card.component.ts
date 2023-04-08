@@ -12,7 +12,7 @@ import { ArtistService } from 'src/app/services/artist.service';
 export class ShowCardComponent implements OnInit {
   @Input() show!: Show;
   
-  constructor(private _router: Router, private artistService: ArtistService, public datepip: DatePipe) { }
+  constructor( private artistService: ArtistService, public datepip: DatePipe) { }
 
   ngOnInit(): void {
     let currentDate = new Date;
@@ -28,8 +28,8 @@ export class ShowCardComponent implements OnInit {
   }
 
   toArtist() {
-    let url = this.artistService.artists.find(x => x.id === this.show.artistID)?.urlName;
-    this._router.navigateByUrl('/artist/'+url)
+    let url = this.artistService.artists.find(x => x._id === this.show.artistID)?.urlName;
+    // this._router.navigateByUrl('/artist/'+url)
   }
 
   toTickets() {

@@ -18,8 +18,17 @@ import { ShowCardComponent } from './body-container/agenda/show-card/show-card.c
 import { DatePipe } from '@angular/common';
 import { ArtistService } from './services/artist.service';
 import { ShowService } from './services/show.service';
+import { AdminComponent } from './admin/admin.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { AdminArtistComponent } from './admin/admin-artist/admin-artist.component';
+import { AdminShowsComponent } from './admin/admin-shows/admin-shows.component';
 
 const appRoutes: Routes = [
+  {path: 'admin', component: AdminComponent, children: [
+    {path: 'dashboard', component: DashboardComponent},
+    {path: 'artist', component: AdminArtistComponent},
+    {path: 'show', component: AdminShowsComponent},
+  ]},
   {path: 'agenda', component: AgendaComponent},
   {path: 'artists', component: ArtistsComponent},
   {path: 'artist/:name', component: ArtistPageComponent},
@@ -42,7 +51,8 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     ArtistPageComponent,
     ArtistShowTablerowComponent,
-    ShowCardComponent
+    ShowCardComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

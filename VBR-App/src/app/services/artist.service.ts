@@ -62,7 +62,7 @@ export class ArtistService {
       name: "Ara",
       description: "Ara is een Tilburgse singer-songwriter van Armeense afkomst. Geïnspireerd door westerse en oosterse folk invloeden, combineert hij fingerstyle gitaar met meeslepende melodieën en poëtische teksten. Zijn sound is te vergelijken met Ben Howard, Hozier en Damien Rice. In 2021 vertrok Ara naar California om zijn eigen materiaal uit te testen als straatmuzikant. In de zomer van 2022 keerde hij terug en begon hij op Nederlandse podia te spelen. Met lokale aandacht van Omroep Tilburg, een Pophuis traject en coaching van o.a. Maarten van Damme (Racoon) begint Ara een impact te maken op een regionale muziekscene. Ara werkt momenteel aan zijn debuut EP: From Embers - Augustus 2023. ",
       shortDescription: "Western and eastern folk combined with poetic lyrics and soulfull melodies",
-      spotifyPlaylist: "https://open.spotify.com/embed/artist/6YWZXgJnIkhmLN7GYX3sF4?utm_source=generator&theme=0",
+      spotifyPlaylist: "",
       youtubeLink: "https://www.youtube.com/embed/un85CccavKs?t=9",
       instagramLink: "https://www.instagram.com/aramusic/",
       facebookLink: "https://www.facebook.com/AraSounds",

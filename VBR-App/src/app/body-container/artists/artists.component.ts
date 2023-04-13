@@ -9,16 +9,14 @@ import { ArtistService } from 'src/app/services/artist.service';
 })
 export class ArtistsComponent implements OnInit {
 
-  artists: Artist[] | undefined;
+  artists!: Artist[] ;
 
   constructor(private artistService: ArtistService) { }
 
   ngOnInit(): void {
-    // this.artistService.getArtists().then(response => {
-    //   console.log(response)
-    //   this.artists = response!
-    // })
-    this.artists = this.artistService.getArtists();
+    this.artistService.getArtists().then(response => {
+      console.log(response)
+      this.artists = response!
+    }) 
   }
-
 }

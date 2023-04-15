@@ -81,9 +81,9 @@ export class ArtistService {
       })
   }
 
-  public async updateArtist(artist: Artist) {
+  public async updateArtist(artist: Artist, id: string) {
     return await lastValueFrom(this.http.put(
-      this.url + artist._id,
+      this.url + id,
       JSON.stringify(artist),
       {headers: this.headers}))
       .then((artist) => {

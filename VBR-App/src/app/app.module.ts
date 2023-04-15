@@ -22,13 +22,17 @@ import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AdminArtistComponent } from './admin/admin-artist/admin-artist.component';
 import { AdminShowsComponent } from './admin/admin-shows/admin-shows.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { AuthGuard } from './_helpers/auth.guard';
 
 const appRoutes: Routes = [
   {path: 'admin', component: AdminComponent, children: [
-    {path: 'dashboard', component: DashboardComponent},
-    {path: 'artist', component: AdminArtistComponent},
-    {path: 'show', component: AdminShowsComponent},
-  ]},
+    {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+    {path: 'artist', component: AdminArtistComponent, canActivate: [AuthGuard]},
+    {path: 'show', component: AdminShowsComponent, canActivate: [AuthGuard]},
+  ], canActivate: [AuthGuard]},
+  {path: 'login', component: AdminLoginComponent},
   {path: 'agenda', component: AgendaComponent},
   {path: 'artists', component: ArtistsComponent},
   {path: 'artist/:name', component: ArtistPageComponent},
@@ -52,13 +56,15 @@ const appRoutes: Routes = [
     ArtistPageComponent,
     ArtistShowTablerowComponent,
     ShowCardComponent,
-    AdminComponent
+    AdminComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule
   ],
   exports: [RouterModule],
   providers: [DatePipe, ArtistService, ShowService],

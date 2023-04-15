@@ -1,17 +1,17 @@
 import { Show } from "./show.model";
 
 export class Artist {
-    public _id: string | undefined;
-    public name: string | undefined;
-    public description: string | undefined;
-    public shortDescription: string | undefined;
-    public pressPic: string | undefined;
-    public spotifyPlaylist: string | undefined;
-    public youtubeLink: string | undefined;
-    public instagramLink: string | undefined;
-    public facebookLink: string | undefined;
-    public driveLink: string | undefined;
-    public urlName: string | undefined;
+    public _id!: string;
+    public name!: string;
+    public description!: string;
+    public shortDescription!: string;
+    public pressPic!: string;
+    public spotifyPlaylist!: string;
+    public youtubeLink!: string;
+    public instagramLink!: string;
+    public facebookLink!: string;
+    public driveLink!: string;
+    public urlName!: string;
     public shows!: Show[];
     public spotifyId!: string;
 

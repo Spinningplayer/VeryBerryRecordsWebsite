@@ -1,40 +1,89 @@
-<!-- <app-header></app-header> -->
 <div class="container">
-    <div class="row ">
-        <!-- <div class="col-xs-12 col-4 "><img src="{{artist?.pressPic}}" class="img-fluid" style="border-radius: 12px;"></div> -->
-        <div class="col-xs-12 col-7 content">
-            <!-- <div class="row"><div class="col-8"><h1>{{artist?.name}}</h1></div></div>
-            <div class="row"><div class="col-10">{{artist?.description}}</div></div> -->
-            <div class="bio">
-                <!-- <div class="col-xs-12 col-md-10"><h1>{{artist?.name}}</h1></div> -->
-                <!-- <div class="col-xs-12 col-md-10">{{artist?.description}}</div> -->
+    <div class="col-xl-6 col-md-6 col-xs-12">
+        <div class="card">
+          <div class="card-header"><h4 class="card-title">Add or Edit Artist</h4></div>
+          <div class="">   
+            <div class="card-block">
+              <form formGroup="artistForm" (ngSubmit)="save()">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" formControlName="name" class="form-control">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <label for="Description">Description</label>
+                    <input type="text" id="Description" formControlName="Description" class="form-control">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <label for="shortDescription">shortDescription</label>
+                    <input type="text" id="shortDescription" formControlName="shortDescription" class="form-control">
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                      <label for="pressPic">pressPic</label>
+                      <input type="text" id="pressPic" formControlName="pressPic" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                      <label for="spotifyPlaylist">spotifyPlaylist</label>
+                      <input type="text" id="spotifyPlaylist" formControlName="spotifyPlaylist" class="form-control">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <label for="youtubeLink">youtubeLink</label>
+                      <input type="text" id="youtubeLink" formControlName="youtubeLink" class="form-control">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <label for="instagramLink">instagramLink</label>
+                      <input type="text" id="instagramLink" formControlName="instagramLink" class="form-control">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <label for="facebookLink">facebookLink</label>
+                      <input type="text" id="facebookLink" formControlName="facebookLink" class="form-control">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <label for="driveLink">driveLink</label>
+                      <input type="text" id="driveLink" formControlName="driveLink" class="form-control">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <label for="urlName">urlName</label>
+                      <input type="text" id="urlName" formControlName="urlName" class="form-control">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <label for="spotifyId">spotifyId</label>
+                      <input type="text" id="spotifyId" formControlName="spotifyId" class="form-control">
+                    </div>
+                  </div>
+                <br>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <!-- <button *ngIf="editMode" class="btn btn-success" [disabled]="!form.valid">Update</button> -->
+                    <button type="button" class="btn btn-success" [disabled]="!artistForm.valid">Create</button>
+                    <button type="button" class="btn btn-danger" (click)="cancel()">Cancel</button>
+                    <button type="button" class="btn btn-primary" (click)="findInvalidControls()">Check Validity</button>
+                  </div>
+                </div>
+              </form>
             </div>
-            <div class="row">
-                <div class="col-xs-12 col-md-5"><table class="table">
-                    <tbody>
-                        <tr><td colspan="3">Afgelopen Shows</td></tr>
-                        <tr>
-                            <td scope="col">Datum</td>
-                            <td scope="col">Venue</td>
-                            <td scope="col">Stad</td>
-                        </tr>
-                        <!-- <tr *ngFor="let show of artist?.shows" app-artist-show-tablerow [show]="show"></tr>  -->
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-xs-12 col-md-5 media-buttons">    
-                <ul>
-                    <!-- <li><a class="btn d-block instagram-btn" [href]="artist?.instagramLink"><span class="fa fa-instagram"></span>  Instagram</a></li> -->
-                    <!-- <li><a class="btn d-block facebook-btn" [href]="artist?.facebookLink"><span class="fa fa-facebook"></span>  Facebook</a></li> -->
-                    <!-- <li><a class="btn d-block google-btn" [href]="artist?.driveLink"><span class="fa fa-google"></span>  Download Press Kit</a></li> -->
-                </ul>
-            </div>
-            </div>
+          </div>
         </div>
-    </div>
-    <div class="row">
-        <!-- <div class="col-xs-12 col-md-4"><iframe style="border-radius:12px; box-shadow: 0px 4px 4px black;" [src]="safeSpotify" width="100%" height="480" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div> -->
-        <!-- <div class="col-xs-12 col-md-8"><iframe style="border-radius:12px; box-shadow: 0px 4px 4px black;" height="100%" width="89.5%" [src]="safeYoutube"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div> -->
-        
+      </div>
+      
 </div>
-

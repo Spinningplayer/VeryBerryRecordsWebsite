@@ -1,89 +1,12 @@
 <div class="container">
-    <div class="col-xl-6 col-md-6 col-xs-12">
-        <div class="card">
-          <div class="card-header"><h4 class="card-title">Add or Edit Artist</h4></div>
-          <div class="">   
-            <div class="card-block">
-              <form formGroup="artistForm" (ngSubmit)="save()">
-                <div class="row">
-                  <div class="col-xs-12">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" formControlName="name" class="form-control">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12">
-                    <label for="Description">Description</label>
-                    <input type="text" id="Description" formControlName="Description" class="form-control">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12">
-                    <label for="shortDescription">shortDescription</label>
-                    <input type="text" id="shortDescription" formControlName="shortDescription" class="form-control">
-                  </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                      <label for="pressPic">pressPic</label>
-                      <input type="text" id="pressPic" formControlName="pressPic" class="form-control">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                      <label for="spotifyPlaylist">spotifyPlaylist</label>
-                      <input type="text" id="spotifyPlaylist" formControlName="spotifyPlaylist" class="form-control">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <label for="youtubeLink">youtubeLink</label>
-                      <input type="text" id="youtubeLink" formControlName="youtubeLink" class="form-control">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <label for="instagramLink">instagramLink</label>
-                      <input type="text" id="instagramLink" formControlName="instagramLink" class="form-control">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <label for="facebookLink">facebookLink</label>
-                      <input type="text" id="facebookLink" formControlName="facebookLink" class="form-control">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <label for="driveLink">driveLink</label>
-                      <input type="text" id="driveLink" formControlName="driveLink" class="form-control">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <label for="urlName">urlName</label>
-                      <input type="text" id="urlName" formControlName="urlName" class="form-control">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <label for="spotifyId">spotifyId</label>
-                      <input type="text" id="spotifyId" formControlName="spotifyId" class="form-control">
-                    </div>
-                  </div>
-                <br>
-                <div class="row">
-                  <div class="col-xs-12">
-                    <!-- <button *ngIf="editMode" class="btn btn-success" [disabled]="!form.valid">Update</button> -->
-                    <button type="button" class="btn btn-success" [disabled]="!artistForm.valid">Create</button>
-                    <button type="button" class="btn btn-danger" (click)="cancel()">Cancel</button>
-                    <button type="button" class="btn btn-primary" (click)="findInvalidControls()">Check Validity</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      
+    <div class="card">
+        <button type="button" class="btn btn-info" [routerLink]="['/backstage/artist/new']">New Artist</button>
+        <table>
+            <tr *ngFor="let artist of artists">
+                <td>{{artist.name}}</td>
+                <td><a class="btn btn-info" (click)="goToArtistForm(artist.urlName)">Edit</a></td>
+                <td><a class="btn btn-info" (click)="deleteArtist(artist)">Delete</a></td>
+            </tr>
+        </table>
+    </div>
 </div>

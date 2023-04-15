@@ -29,7 +29,6 @@ export class ArtistService {
       this.url,
       {headers: this.headers}))
       .then(response => {
-        console.log(response)
         this.artists = response as Artist[];
         return response as Artist[]
       })

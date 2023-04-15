@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-admin-shows',
@@ -6,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-shows.component.css']
 })
 export class AdminShowsComponent implements OnInit {
-
+  showForm = new FormGroup({})
   constructor() { }
 
   ngOnInit(): void {

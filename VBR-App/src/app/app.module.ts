@@ -10,7 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './body-container/home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { ArtistCardComponent } from './body-container/artists/artist-card/artist-card.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ArtistPageComponent } from './body-container/artist-page/artist-page.component';
 import { ArtistShowTablerowComponent } from './body-container/artist-page/artist-show-tablerow/artist-show-tablerow.component';
@@ -25,11 +25,14 @@ import { AdminShowsComponent } from './admin/admin-shows/admin-shows.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { AuthGuard } from './_helpers/auth.guard';
+import { JwtInterceptor } from './_helpers/jwt.intercepter';
+import { AdminArtistFormComponent } from './admin/admin-artist/admin-artist-form/admin-artist-form.component';
 
 const appRoutes: Routes = [
   {path: 'backstage', component: AdminComponent, children: [
     {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
     {path: 'artist', component: AdminArtistComponent, canActivate: [AuthGuard]},
+    {path: 'artist/:name', component: AdminArtistFormComponent, canActivate: [AuthGuard]},
     {path: 'show', component: AdminShowsComponent, canActivate: [AuthGuard]},
   ], canActivate: [AuthGuard]},
   {path: 'login', component: AdminLoginComponent},
@@ -57,7 +60,9 @@ const appRoutes: Routes = [
     ArtistShowTablerowComponent,
     ShowCardComponent,
     AdminComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    AdminArtistComponent,
+    AdminArtistFormComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +72,12 @@ const appRoutes: Routes = [
     ReactiveFormsModule
   ],
   exports: [RouterModule],
-  providers: [DatePipe, ArtistService, ShowService],
+  providers: [
+    DatePipe, 
+    ArtistService, 
+    ShowService,
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -30,7 +30,7 @@ export class AdminLoginComponent implements OnInit {
     .then(user => {
       console.log(user)
       if(user.authToken != null) {
-        let route = this.route.snapshot.queryParams['returnUrl'] || '/admin';
+        let route = this.route.snapshot.queryParams['returnUrl'] || '/backstage';
         console.log(route);
        this._router.navigateByUrl(route);
        this.loginFailed = false;

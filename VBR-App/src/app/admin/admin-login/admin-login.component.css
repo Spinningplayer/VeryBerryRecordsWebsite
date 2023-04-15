@@ -1,5 +1,5 @@
 .container {
-    padding-top: 6rem;
+    padding-top: 2rem;
 }
 
 .card {
@@ -44,3 +44,46 @@ label {
     padding: 0.25rem;
     margin-bottom: 1rem;
 }
+
+.container-fluid {
+    text-align: center;
+  }
+  
+  .masthead-brand {
+    margin-top: 1rem;
+    width: 50pt;
+    height: 50pt;
+    transition: 0.3s;
+  }
+  
+  .masthead-brand:hover {
+    opacity: 0.5;
+  }
+  
+  .nav-item {
+    padding-right: 1rem;
+    padding-top: 3rem;
+    
+    text-decoration: none;
+    text-underline-position: under;
+    text-underline-offset: 0.3rem;
+  
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2.2rem;
+    letter-spacing: 0.044rem;
+    color: white;
+    transition: 0.3s;
+  }
+  
+  .active-link {
+    color: lightgrey;
+    text-decoration: underline;
+    text-decoration-thickness: 0.3rem;
+  }
+  
+  .nav-item:hover {
+    color: grey;
+    text-decoration: underline;
+    text-decoration-thickness: 0.3rem;
+  }

@@ -39,7 +39,7 @@ export class AuthService {
   }
 
   logout() {
-  localStorage.removeItem('currentUser');
-  this.currenUserSubject.next(new User());
+    localStorage.removeItem('currentUser');
+    this.currenUserSubject.next(new User());
   }
 }

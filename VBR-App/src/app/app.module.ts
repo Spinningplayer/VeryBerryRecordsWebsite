@@ -27,7 +27,7 @@ import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { AuthGuard } from './_helpers/auth.guard';
 
 const appRoutes: Routes = [
-  {path: 'admin', component: AdminComponent, children: [
+  {path: 'backstage', component: AdminComponent, children: [
     {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
     {path: 'artist', component: AdminArtistComponent, canActivate: [AuthGuard]},
     {path: 'show', component: AdminShowsComponent, canActivate: [AuthGuard]},

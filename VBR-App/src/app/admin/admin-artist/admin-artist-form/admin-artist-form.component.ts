@@ -51,8 +51,8 @@ export class AdminArtistFormComponent implements OnInit {
     console.log(this.artistForm.controls)
     if(this.artistForm.valid) {
       let artist = new Artist(this.artistForm.value);
-      artist._id = this.artist._id;
       if(this.editMode) {
+        artist._id = this.artist._id;
         this.artistService.updateArtist(artist, artist._id)
         .then(response => {
           if(response != null) {

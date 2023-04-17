@@ -16,7 +16,7 @@ export class ArtistService {
 
   public selectedArtist: Artist | undefined;
 
-  public artists!: Artist[];
+  public artists: Artist[] = [];
 
   constructor(private http: HttpClient) { }
 

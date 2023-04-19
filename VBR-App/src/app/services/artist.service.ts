@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { Observable, lastValueFrom, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { Artist } from '../models/artist.model';
 import {env} from '../environments/env';
+import { AuthService } from './auth.service';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +20,12 @@ export class ArtistService {
 
   public artists: Artist[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient, 
+    private authService: AuthService,
+    private _router: Router,
+    private route: ActivatedRoute
+    ) { }
 
   public selectArtist(artist: Artist) {
     this.selectedArtist = artist;
@@ -90,8 +97,16 @@ export class ArtistService {
       })
       .catch((error) => {
         console.log(error)
+        this.handleError(error);
         return null
       })
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    if(error.status == 401) {
+      this.authService.logout();
+      this._router.navigate(['/login'], {queryParams: {returnUrl: this.route.snapshot.url}})
+    }
   }
 }
 

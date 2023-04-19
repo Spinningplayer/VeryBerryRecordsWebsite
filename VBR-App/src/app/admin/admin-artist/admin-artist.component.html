@@ -1,12 +1,18 @@
 <div class="container">
     <div class="card">
-        <button type="button" class="btn btn-info" [routerLink]="['/backstage/artist/new']">New Artist</button>
-        <table>
-            <tr *ngFor="let artist of artists">
-                <td>{{artist.name}}</td>
-                <td><a class="btn btn-info" (click)="goToArtistForm(artist.urlName)">Edit</a></td>
-                <td><a class="btn btn-info" (click)="deleteArtist(artist)">Delete</a></td>
-            </tr>
-        </table>
+        <div class="row">
+                <input class="col-6" type="text" [formControl]="searchControl">
+
+            <button class="col-2" type="button" class="btn btn-info" [routerLink]="['/backstage/artist/new']">New Artist</button>
+        </div>
+        <div class="row">
+            <table>
+                <tr *ngFor="let artist of artists" >
+                    <td class="col-8">{{artist.name}}</td>
+                    <td class="col-2"><a class="btn btn-info" (click)="goToArtistForm(artist.urlName)">Edit</a></td>
+                    <td class="col-2"><a class="btn btn-info" (click)="deleteArtist(artist)">Delete</a></td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>

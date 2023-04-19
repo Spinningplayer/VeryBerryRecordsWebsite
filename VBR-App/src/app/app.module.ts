@@ -27,6 +27,7 @@ import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { AuthGuard } from './_helpers/auth.guard';
 import { JwtInterceptor } from './_helpers/jwt.intercepter';
 import { AdminArtistFormComponent } from './admin/admin-artist/admin-artist-form/admin-artist-form.component';
+import { HttpErrorInterceptor } from './_helpers/error.interceptor';
 
 const appRoutes: Routes = [
   {path: 'backstage', component: AdminComponent, children: [
@@ -76,7 +77,8 @@ const appRoutes: Routes = [
     DatePipe, 
     ArtistService, 
     ShowService,
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    // {provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

@@ -66,7 +66,8 @@ const appRoutes: Routes = [
     AdminLoginComponent,
     AdminArtistComponent,
     AdminArtistFormComponent,
-    AdminShowsComponent
+    AdminShowsComponent,
+    AdminShowFormComponent
   ],
   imports: [
     BrowserModule,

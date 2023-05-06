@@ -11,6 +11,7 @@
 input {
     background-color: #1D1D1D;
     margin-bottom: 1rem;
+    border-radius: 12px;
     color: white;
 }
 

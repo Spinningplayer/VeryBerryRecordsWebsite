@@ -11,6 +11,8 @@ import { ArtistService } from 'src/app/services/artist.service';
 })
 export class AdminArtistComponent implements OnInit {
   artists!: Artist[];
+  allArtists!: Artist[];
+  searchControl = new FormControl('');
 
   constructor(private artistService: ArtistService, private _router: Router) { }
 
@@ -18,6 +20,19 @@ export class AdminArtistComponent implements OnInit {
     this.artistService.getArtists()
     .then(artists => {
       this.artists = artists as Artist[];
+      this.allArtists = artists as Artist[];
+    })
+
+    // this.searchControl.registerOnChange(()=>{
+    //   console.log(this.searchControl.value)
+    // });
+
+    this.searchControl.valueChanges.subscribe((value) => {
+      if(value != null) {
+        this.artists = this.allArtists.filter(artist => artist.name.toLowerCase().includes(value.toLowerCase()))
+      } else {
+        this.artists = this.allArtists;
+      }
     })
   }
 
@@ -35,5 +50,9 @@ export class AdminArtistComponent implements OnInit {
         })
       }
     })
+  }
+
+  search() {
+    console.log(this.searchControl)
   }
 }

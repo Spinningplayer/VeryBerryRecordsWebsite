@@ -27,6 +27,7 @@ import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { AuthGuard } from './_helpers/auth.guard';
 import { JwtInterceptor } from './_helpers/jwt.intercepter';
 import { AdminArtistFormComponent } from './admin/admin-artist/admin-artist-form/admin-artist-form.component';
+import { AdminShowFormComponent } from './admin/admin-shows/admin-show-form/admin-show-form.component';
 
 const appRoutes: Routes = [
   {path: 'backstage', component: AdminComponent, children: [
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
     {path: 'artist', component: AdminArtistComponent, canActivate: [AuthGuard]},
     {path: 'artist/:name', component: AdminArtistFormComponent, canActivate: [AuthGuard]},
     {path: 'show', component: AdminShowsComponent, canActivate: [AuthGuard]},
+    {path: 'show/:id', component: AdminShowFormComponent, canActivate: [AuthGuard]}
   ], canActivate: [AuthGuard]},
   {path: 'login', component: AdminLoginComponent},
   {path: 'agenda', component: AgendaComponent},
@@ -62,7 +64,8 @@ const appRoutes: Routes = [
     AdminComponent,
     AdminLoginComponent,
     AdminArtistComponent,
-    AdminArtistFormComponent
+    AdminArtistFormComponent,
+    AdminShowsComponent
   ],
   imports: [
     BrowserModule,

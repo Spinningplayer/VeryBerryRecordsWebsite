@@ -1,5 +1,5 @@
 export class Show {
-    public _id!: number;
+    public _id!: string;
     public venue!: string;
     public date!: Date;
     public city!: string;

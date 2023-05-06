@@ -23,10 +23,9 @@ input:focus {
 
 }
 
-.btn {
+button {
     border-radius: 20px;
 }
-
 
 .title {
     padding-bottom: 1rem;

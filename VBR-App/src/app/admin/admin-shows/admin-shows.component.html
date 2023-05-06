@@ -1,1 +1,13 @@
-<p>admin-shows works!</p>
+<div class="container">
+    <div class="card">
+        <button type="button" class="btn btn-info" [routerLink]="['/backstage/show/new']">New Artist</button>
+        <table>
+            <tr *ngFor="let show of shows">
+                <td>{{ show?.date | date: "dd/MM/yyyy" }}</td>
+                <td>{{show.venue}}</td>
+                <td><a class="btn btn-info" (click)="goToShowForm(show._id)">Edit</a></td>
+                <td><a class="btn btn-info" (click)="deleteShow(show)">Delete</a></td>
+            </tr>
+        </table>
+    </div>
+</div>

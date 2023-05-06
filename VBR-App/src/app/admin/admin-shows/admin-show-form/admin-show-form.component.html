@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="col-xl-6 col-md-6 col-xs-12">
+        <div class="card">
+          <div class="card-header"><h4 class="card-title">Add or Edit Artist</h4></div>
+          <div class="">   
+            <div class="card-block">
+              <form [formGroup]="showForm" (ngSubmit)="save()">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <label for="venue">Venue</label>
+                    <input type="text" id="venue" formControlName="venue" class="form-control">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" formControlName="date" class="form-control">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <label for="city">city</label>
+                    <input type="text" id="city" formControlName="city" class="form-control">
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                      <label for="artist">artist</label>
+                      <input type="text" id="artist" formControlName="artist" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                      <label for="ticketLink">Ticket Link</label>
+                      <input type="text" id="ticketLink" formControlName="ticketLink" class="form-control">
+                    </div>
+                  </div>
+                <br>
+                <div class="row" *ngIf="error">
+                  Something went wrong!
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <button type="submit" class="btn btn-success">save</button>
+                    <button type="button" class="btn btn-danger" (click)="cancel()">Cancel</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</div>

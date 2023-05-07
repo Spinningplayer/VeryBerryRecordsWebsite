@@ -23,3 +23,49 @@ body {
     min-height: 100%;
     font-family: helvetica;
 }
+
+input[type=text],
+input[type=Date],
+select,
+option {
+  background-color: #1D1D1D;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+input[type=text]:focus  {
+  border-color: #282828;
+  background-color: #1D1D1D;
+  color: white;
+}
+
+input:-webkit-autofill {
+  background-color: aqua;
+}
+
+.card-header {
+  padding-left: 0;
+
+}
+
+button {
+  border-radius: 20px;
+}
+
+.title {
+  padding-bottom: 1rem;
+}
+
+label {
+  padding-bottom: 0.25rem;
+}
+
+.fail {
+  color: white;
+  background-color: darkred;
+  border-color: red;
+  border: 1px;
+  border-radius: 4px;
+  padding: 0.25rem;
+  margin-bottom: 1rem;
+}

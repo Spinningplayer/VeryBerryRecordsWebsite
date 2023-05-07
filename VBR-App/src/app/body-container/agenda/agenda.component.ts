@@ -13,7 +13,11 @@ export class AgendaComponent implements OnInit {
   constructor(private showService: ShowService) { }
 
   ngOnInit(): void {
-    this.shows = this.showService.shows;
+    this.showService.getShows()
+    .then(shows => {
+      this.shows = shows as Show[];
+    })
+    console.log(this.shows[0].artistName)
   }
 
 }

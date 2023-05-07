@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Artist } from 'src/app/models/artist.model';
 import { Show } from 'src/app/models/show.model';
 import { ArtistService } from 'src/app/services/artist.service';
 
@@ -11,11 +12,13 @@ import { ArtistService } from 'src/app/services/artist.service';
 })
 export class ShowCardComponent implements OnInit {
   @Input() show!: Show;
+  artists!: Artist[];
   
-  constructor( private artistService: ArtistService, public datepip: DatePipe) { }
+  constructor( private artistService: ArtistService, public datepip: DatePipe, private _router: Router) { }
 
   ngOnInit(): void {
     let currentDate = new Date;
+    this.show.date = new Date(this.show.date)
     if (this.show.date.getFullYear() < currentDate.getFullYear() ) {
       this.show.expired = true
     } else if(this.show.date.getMonth() < currentDate.getMonth()) {
@@ -25,11 +28,16 @@ export class ShowCardComponent implements OnInit {
         this.show.expired = true
       }
     }
+
+    this.artistService.getArtists()
+    .then(artists => {
+      this.artists = artists as Artist[];
+    })
   }
 
   toArtist() {
-    let url = this.artistService.artists.find(x => x._id === this.show.artistID)?.urlName;
-    // this._router.navigateByUrl('/artist/'+url)
+    let url = this.artists.find(x => x._id === this.show.artistID)?.urlName;
+    this._router.navigateByUrl('/artist/'+url)
   }
 
   toTickets() {

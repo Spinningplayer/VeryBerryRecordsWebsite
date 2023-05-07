@@ -27,7 +27,14 @@ export class AdminShowsComponent implements OnInit {
   }
 
   deleteShow(show: Show) {
-
+    this.showService.deleteShow(show)
+    .then(response => {
+      if(response != null) {
+        this.showService.getShows().then(shows => {
+          this.shows = shows as Show[];
+        })
+      }
+    })
   }
 
 }

@@ -8,6 +8,12 @@
     border-radius: 12px;
 }
 
+.artist-row {
+    padding-top: 0.25rem;   
+}
+
+
+
 input {
     background-color: #1D1D1D;
     margin-bottom: 1rem;

@@ -1,18 +1,21 @@
 <div class="container">
     <div class="card">
         <div class="row">
-                <input class="col-6" type="text" [formControl]="searchControl">
-
-            <button class="col-2" type="button" class="btn btn-info" [routerLink]="['/backstage/artist/new']">New Artist</button>
+            <div class="col-10">
+                <input class="form-control" type="text" [formControl]="searchControl" placeholder="Search Artist">
+            </div>
+            <div class="col-2">
+                <a type="button" class="btn btn-info d-block" [routerLink]="['/backstage/artist/new']">New Artist</a>
+            </div>
         </div>
         <div class="row">
-            <table>
-                <tr *ngFor="let artist of artists" >
-                    <td class="col-8">{{artist.name}}</td>
-                    <td class="col-2"><a class="btn btn-info" (click)="goToArtistForm(artist.urlName)">Edit</a></td>
-                    <td class="col-2"><a class="btn btn-info" (click)="deleteArtist(artist)">Delete</a></td>
-                </tr>
-            </table>
+            <div class="col-12">
+                <div class="row artist-row" *ngFor="let artist of artists">
+                    <div class="col-8">{{artist.name}}</div>
+                    <div class="col-2"><a class="btn btn-info d-block" (click)="goToArtistForm(artist.urlName)">Edit</a></div>
+                    <div class="col-2"><a class="btn btn-info d-block" (click)="deleteArtist(artist)">Delete</a></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

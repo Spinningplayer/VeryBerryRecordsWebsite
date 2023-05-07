@@ -21,9 +21,9 @@ export class ShowCardComponent implements OnInit {
     this.show.date = new Date(this.show.date)
     if (this.show.date.getFullYear() < currentDate.getFullYear() ) {
       this.show.expired = true
-    } else if(this.show.date.getMonth() < currentDate.getMonth()) {
+    } else if(this.show.date.getMonth() < currentDate.getMonth() && this.show.date.getFullYear() == currentDate.getFullYear()) {
       this.show.expired = true
-    } else if(this.show.date.getMonth() == currentDate.getMonth()) {
+    } else if(this.show.date.getMonth() == currentDate.getMonth()  && this.show.date.getFullYear() == currentDate.getFullYear()) {
       if(this.show.date.getDay() < currentDate.getDay()) {
         this.show.expired = true
       }

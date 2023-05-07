@@ -1,1 +1,16 @@
-<p>dashboard works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+            <div class="card" (click)="redirectTo('/backstage/artist')">
+                <div class="card-header"><h1>Artists</h1></div>
+                <h1>{{artistCount}}</h1>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <div class="card" (click)="redirectTo('/backstage/show')">
+                <div class="card-header"><h1>Shows</h1></div>
+                <h1>{{showCount}}</h1>
+            </div>
+        </div>
+    </div>
+</div>

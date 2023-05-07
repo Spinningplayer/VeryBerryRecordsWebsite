@@ -24,6 +24,16 @@ body {
     font-family: helvetica;
 }
 
+.card {
+  background-color: #282828;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.container {
+  padding-top: 2rem;
+}
+
 input[type=text],
 input[type=Date],
 select,

@@ -32,6 +32,7 @@ import { AdminShowFormComponent } from './admin/admin-shows/admin-show-form/admi
 import { DeleteDialogComponent } from './dialogs/delete-dialog/delete-dialog.component';
 
 
+
 const appRoutes: Routes = [
   {path: 'backstage', component: AdminComponent, children: [
     {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},

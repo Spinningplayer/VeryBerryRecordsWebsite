@@ -12,6 +12,8 @@ import { ShowService } from 'src/app/services/show.service';
 })
 export class AdminShowsComponent implements OnInit {
   shows!: Show[];
+  allShows!: Show[];
+  searchControl = new FormControl('');
 
   constructor(private showService: ShowService, private _router: Router) { }
 
@@ -19,6 +21,15 @@ export class AdminShowsComponent implements OnInit {
     this.showService.getShows()
     .then(shows => {
       this.shows = shows as Show[];
+      this.allShows = shows as Show[];
+    })
+
+    this.searchControl.valueChanges.subscribe((value) => {
+      if(value != null) {
+        this.shows = this.allShows.filter(show => show.artistName.toLowerCase().includes(value.toLowerCase()) || show.venue.toLowerCase().includes(value.toLowerCase()))
+      } else {
+        this.shows = this.allShows;
+      }
     })
   }
 
@@ -27,14 +38,15 @@ export class AdminShowsComponent implements OnInit {
   }
 
   deleteShow(show: Show) {
-    this.showService.deleteShow(show)
-    .then(response => {
-      if(response != null) {
-        this.showService.getShows().then(shows => {
-          this.shows = shows as Show[];
-        })
-      }
-    })
+
+    // this.showService.deleteShow(show)
+    // .then(response => {
+    //   if(response != null) {
+    //     this.showService.getShows().then(shows => {
+    //       this.shows = shows as Show[];
+    //     })
+    //   }
+    // })
   }
 
 }

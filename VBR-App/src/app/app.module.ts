@@ -29,6 +29,8 @@ import { JwtInterceptor } from './_helpers/jwt.intercepter';
 import { AdminArtistFormComponent } from './admin/admin-artist/admin-artist-form/admin-artist-form.component';
 import { HttpErrorInterceptor } from './_helpers/error.interceptor';
 import { AdminShowFormComponent } from './admin/admin-shows/admin-show-form/admin-show-form.component';
+import { DeleteDialogComponent } from './dialogs/delete-dialog/delete-dialog.component';
+
 
 const appRoutes: Routes = [
   {path: 'backstage', component: AdminComponent, children: [
@@ -67,7 +69,9 @@ const appRoutes: Routes = [
     AdminArtistComponent,
     AdminArtistFormComponent,
     AdminShowsComponent,
-    AdminShowFormComponent
+    AdminShowFormComponent,
+    DeleteDialogComponent,
+    
   ],
   imports: [
     BrowserModule,

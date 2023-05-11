@@ -3,7 +3,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Show } from 'src/app/models/show.model';
 import { ShowService } from 'src/app/services/show.service';
-
+import { MatDialog, MatDialogRef } from '@angular/material/dialog'
+import { DeleteDialogComponent } from 'src/app/dialogs/delete-dialog/delete-dialog.component';
 
 @Component({
   selector: 'app-admin-shows',
@@ -15,7 +16,7 @@ export class AdminShowsComponent implements OnInit {
   allShows!: Show[];
   searchControl = new FormControl('');
 
-  constructor(private showService: ShowService, private _router: Router) { }
+  constructor(private showService: ShowService, private _router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.showService.getShows()
@@ -38,7 +39,8 @@ export class AdminShowsComponent implements OnInit {
   }
 
   deleteShow(show: Show) {
-
+    console.log('opening dialog')
+    let dialogRef = this.dialog.open(DeleteDialogComponent)
     // this.showService.deleteShow(show)
     // .then(response => {
     //   if(response != null) {

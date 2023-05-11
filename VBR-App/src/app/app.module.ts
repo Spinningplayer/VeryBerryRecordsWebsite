@@ -30,6 +30,14 @@ import { AdminArtistFormComponent } from './admin/admin-artist/admin-artist-form
 import { HttpErrorInterceptor } from './_helpers/error.interceptor';
 import { AdminShowFormComponent } from './admin/admin-shows/admin-show-form/admin-show-form.component';
 import { DeleteDialogComponent } from './dialogs/delete-dialog/delete-dialog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button'
+import { MatCardModule } from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+
 
 
 
@@ -79,7 +87,14 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule,
     RouterModule.forRoot(appRoutes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    MatListModule
   ],
   exports: [RouterModule],
   providers: [

@@ -7,7 +7,7 @@ import { ArtistService } from 'src/app/services/artist.service';
 @Component({
   selector: 'app-admin-artist-form',
   templateUrl: './admin-artist-form.component.html',
-  styleUrls: ['./admin-artist-form.component.css']
+  styleUrls: ['./admin-artist-form.component.scss']
 })
 export class AdminArtistFormComponent implements OnInit {
   artistForm = new FormGroup({

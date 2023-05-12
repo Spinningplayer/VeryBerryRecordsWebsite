@@ -1,0 +1,65 @@
+.mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+
+.mat-mdc-row:hover .mat-mdc-cell {
+    border-color: currentColor;
+  }
+
+ .container {
+    padding-top: 2rem;
+}
+
+#new-button{
+    margin-bottom: 25px;
+}
+/*
+.card {
+    background-color: #282828;
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.show-row {
+    padding-top: 0.25rem;
+}
+
+input {
+    background-color: #1D1D1D;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+input:focus {
+    border-color: #282828;
+}
+
+.card-header {
+    padding-left: 0;
+
+}
+
+.btn {
+    border-radius: 20px;
+}
+
+
+.title {
+    padding-bottom: 1rem;
+}
+
+label {
+    padding-bottom: 0.25rem;
+}
+
+.fail {
+    color: white;
+    background-color: darkred;
+    border-color: red;
+    border: 1px;
+    border-radius: 4px;
+    padding: 0.25rem;
+    margin-bottom: 1rem;
+} */

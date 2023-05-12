@@ -1,0 +1,28 @@
+@use '@angular/material' as mat;
+@use "./styles/themes/light";
+@use "./styles/themes/dark";
+@include mat.core();
+
+
+
+@include mat.all-component-themes(dark.$my-app-dark-theme);
+
+
+html {
+    overflow-y: scroll;
+    height: 100%;
+  }
+
+body {
+    background-color: #1D1D1B;
+    // color: white;
+    min-height: 100%;
+    font-family: helvetica;
+}
+
+  .card {
+    background-color: #282828;
+    padding: 2rem;
+    border-radius: 12px;
+  }
+  

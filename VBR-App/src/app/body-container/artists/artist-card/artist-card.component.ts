@@ -6,7 +6,7 @@ import { ArtistService } from 'src/app/services/artist.service';
 @Component({
   selector: 'app-artist-card',
   templateUrl: './artist-card.component.html',
-  styleUrls: ['./artist-card.component.css']
+  styleUrls: ['./artist-card.component.scss']
 })
 export class ArtistCardComponent implements OnInit {
   @Input() artist!: Artist | undefined;

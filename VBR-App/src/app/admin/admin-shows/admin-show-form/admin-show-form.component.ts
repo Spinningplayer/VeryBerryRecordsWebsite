@@ -9,7 +9,7 @@ import { ShowService } from 'src/app/services/show.service';
 @Component({
   selector: 'app-admin-show-form',
   templateUrl: './admin-show-form.component.html',
-  styleUrls: ['./admin-show-form.component.css']
+  styleUrls: ['./admin-show-form.component.scss']
 })
 export class AdminShowFormComponent implements OnInit {
   showForm = new FormGroup({

@@ -4,7 +4,7 @@ import { MatDialogRef } from '@angular/material/dialog'
 @Component({
   selector: 'app-delete-dialog',
   templateUrl: './delete-dialog.component.html',
-  styleUrls: ['./delete-dialog.component.css']
+  styleUrls: ['./delete-dialog.component.scss']
 })
 export class DeleteDialogComponent implements OnInit {
 
@@ -15,10 +15,10 @@ export class DeleteDialogComponent implements OnInit {
   }
 
   delete() {
-
+    this.dialogRef.close(true)
   }
 
   close() {
-
+    this.dialogRef.close(false);
   }
 }

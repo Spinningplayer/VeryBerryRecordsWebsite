@@ -8,7 +8,7 @@ import { ArtistService } from 'src/app/services/artist.service';
 @Component({
   selector: '[app-show-card]',
   templateUrl: './show-card.component.html',
-  styleUrls: ['./show-card.component.css']
+  styleUrls: ['./show-card.component.scss']
 })
 export class ShowCardComponent implements OnInit {
   @Input() show!: Show;

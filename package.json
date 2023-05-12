@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@angular/material": "^16.0.1",
     "angular": "^1.8.3"
   }
 }

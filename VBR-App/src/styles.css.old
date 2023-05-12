@@ -1,0 +1,69 @@
+/* You can add global styles to this file, and also import other style files */
+/* @font-face {
+  font-family: helvetica;
+  src: url();
+} */
+
+@import "./font-awesome.css";
+
+
+:root {
+    /* --primary: #30539b;
+    --primary-shadow: #223c72; */
+    --primary: #1D1D1B;
+    --primary-shadow: #1D1D1B;
+  }
+
+
+
+.container {
+  padding-top: 2rem;
+}
+
+/* input[type=text],
+input[type=Date],
+select,
+option {
+  background-color: #1D1D1D;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+input[type=text]:focus  {
+  border-color: #282828;
+  background-color: #1D1D1D;
+  color: white;
+}
+
+input:-webkit-autofill {
+  background-color: aqua;
+} */
+
+.card-header {
+  padding-left: 0;
+
+}
+
+button {
+  border-radius: 20px;
+}
+
+.title {
+  padding-bottom: 1rem;
+}
+
+label {
+  padding-bottom: 0.25rem;
+}
+
+.fail {
+  color: white;
+  background-color: darkred;
+  border-color: red;
+  border: 1px;
+  border-radius: 4px;
+  padding: 0.25rem;
+  margin-bottom: 1rem;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -42,7 +42,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatGridListModule} from '@angular/material/grid-list';
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select'
 
 const appRoutes: Routes = [
   {path: 'backstage', component: AdminComponent, children: [
@@ -102,13 +104,19 @@ const appRoutes: Routes = [
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule
   ],
   exports: [RouterModule],
   providers: [
     DatePipe, 
     ArtistService, 
     ShowService,
+    MatDatepickerModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
     // {provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true}
   ],

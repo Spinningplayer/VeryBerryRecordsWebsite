@@ -1,25 +1,32 @@
 <div class="inner">
-    <nav class="nav navbar-default">
-      <div class="container-fluid">
-        <a class="navbar-brand" [routerLink]="['/']"><img class="masthead-brand" src="assets/logo_trans_white.png"></a>    
-      </div>
-    </nav>
-  </div>    
-<div class="container row justify-content-md-center">
-    <div class="col-xs-12 col-md-4 card">
-        <div class="title"><h4>Login</h4></div>
-        <form [formGroup]="loginForm" (ngSubmit)="login()">
-            <div class="fail" *ngIf="loginFailed">Username or password incorrect.</div>
-            <div class="row">
-                <label for="username">Username: </label>
-                <input id="username" type="text" formControlName="username">
-            </div>
-            <div class="row">
-                <label for="password">Password: </label>
-                <input id="password" type="password" formControlName="password">    
-            </div>
-            
-            <button type="submit" [disabled]="!loginForm.valid">Submit</button>
-        </form>
+  <nav class="nav navbar-default">
+    <div class="container-fluid">
+      <a class="navbar-brand" [routerLink]="['/']"><img class="masthead-brand" src="assets/logo_trans_white.png"></a>    
     </div>
-</div>
+  </nav>
+</div>    
+<!-- <mat-grid-list cols="1" rows="1" rowHeight="3:1">
+  <mat-grid-tile> -->
+    <mat-card class="login-card">
+      <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="fail" *ngIf="loginFailed">Username or password incorrect.</div>
+          <mat-form-field>
+            <mat-label>Username:</mat-label>
+            <input matInput id="username" type="text" formControlName="username">
+          </mat-form-field>
+          <br/>
+          <mat-form-field>
+            <mat-label>Password:</mat-label>
+            <input matInput id="password" type="password" formControlName="password">
+          </mat-form-field>
+          <br/>
+          <button mat-raised-button type="submit" [disabled]="!loginForm.valid" color="primary">Login</button>
+      </form>
+      </mat-card-content>
+    </mat-card>
+  <!-- </mat-grid-tile>
+</mat-grid-list> -->

@@ -1,9 +1,9 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Show } from 'src/app/models/show.model';
 import { ShowService } from 'src/app/services/show.service';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog'
+import { MatDialog } from '@angular/material/dialog'
 import { DeleteDialogComponent } from 'src/app/dialogs/delete-dialog/delete-dialog.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
@@ -55,7 +55,6 @@ export class AdminShowsComponent implements AfterViewInit {
   }
 
   deleteShow(show: Show) {
-    console.log('opening dialog')
     let dialogRef = this.dialog.open(DeleteDialogComponent)
     dialogRef.afterClosed().subscribe(result => {
       if(result) {

@@ -1,38 +1,27 @@
 .container {
     padding-top: 2rem;
+    justify-content: center;
 }
 
-.card {
-    background-color: #282828;
-    padding: 2rem;
-    border-radius: 12px;
+// .card {
+//     background-color: #282828;
+//     padding: 2rem;
+//     border-radius: 12px;
+// }
+
+// .login-card {
+//   max-width: 400px;
+// }
+
+mat-card-header {
+  font-size: 28px;
+  margin-bottom: 1rem;
+  margin-left: 0.25rem;
+  color: white;
 }
 
-input {
-    background-color: #1D1D1D;
-    margin-bottom: 1rem;
-    color: white;
-}
-
-input:focus {
-    border-color: #282828;
-}
-
-.card-header {
-    padding-left: 0;
-
-}
-
-button {
-    border-radius: 20px;
-}
-
-.title {
-    padding-bottom: 1rem;
-}
-
-label {
-    padding-bottom: 0.25rem;
+mat-form-field {
+  width: 100%;
 }
 
 .fail {
@@ -49,41 +38,13 @@ label {
     text-align: center;
   }
   
-  .masthead-brand {
-    margin-top: 1rem;
-    width: 50pt;
-    height: 50pt;
-    transition: 0.3s;
-  }
-  
-  .masthead-brand:hover {
-    opacity: 0.5;
-  }
-  
-  .nav-item {
-    padding-right: 1rem;
-    padding-top: 3rem;
-    
-    text-decoration: none;
-    text-underline-position: under;
-    text-underline-offset: 0.3rem;
-  
-    font-size: 1.6rem;
-    font-weight: 500;
-    line-height: 2.2rem;
-    letter-spacing: 0.044rem;
-    color: white;
-    transition: 0.3s;
-  }
-  
-  .active-link {
-    color: lightgrey;
-    text-decoration: underline;
-    text-decoration-thickness: 0.3rem;
-  }
-  
-  .nav-item:hover {
-    color: grey;
-    text-decoration: underline;
-    text-decoration-thickness: 0.3rem;
-  }
+.masthead-brand {
+  margin-top: 1rem;
+  width: 50pt;
+  height: 50pt;
+  transition: 0.3s;
+}
+
+.masthead-brand:hover {
+  opacity: 0.5;
+}

@@ -1,28 +1,45 @@
 <div class="container">
-    <div class="col-xl-6 col-md-6 col-xs-12">
-        <div class="card">
-          <div class="card-header"><h4 class="card-title">Add or Edit Artist</h4></div>
-          <div class="">   
-            <div class="card-block">
-              <form [formGroup]="showForm" (ngSubmit)="save()">
-                <div class="row">
-                  <div class="col-xs-12">
-                    <label for="venue">Venue</label>
-                    <input type="text" id="venue" formControlName="venue" class="form-control">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12">
-                    <label for="date">Date</label>
-                    <input type="date" id="date" formControlName="date" class="form-control">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12">
-                    <label for="city">city</label>
-                    <input type="text" id="city" formControlName="city" class="form-control">
-                  </div>
-                </div>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Create or update show</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="showForm" (ngSubmit)="save()">
+          <mat-form-field>
+            <mat-label>Date</mat-label>
+            <input cdkAutofill matInput type="text" id="date" [matDatepicker]="date" formControlName="date">
+            <mat-datepicker-toggle matIconSuffix [for]="date"></mat-datepicker-toggle>
+            <mat-datepicker #date></mat-datepicker>
+          </mat-form-field>
+          <br/>
+          <mat-form-field>
+            <mat-label>Venue</mat-label>
+            <input cdkAutofill matInput type="text" id="venue" formControlName="venue">
+          </mat-form-field>
+          <br/>
+          <mat-form-field>
+            <mat-label>City</mat-label>
+            <input matInput type="text" id="city" formControlName="city">
+          </mat-form-field>
+          <br/>
+          <mat-form-field>
+            <mat-label>Artist</mat-label>
+            <mat-select matNativeControl formControlName="artist">
+              <mat-option *ngFor="let artist of artists" [value]="artist._id">{{artist.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <br/>
+          <mat-form-field>
+            <mat-label>Ticketlink</mat-label>
+            <input matInput type="text" id="ticketLink" formControlName="ticketLink">
+          </mat-form-field>
+          <br/>
+          <button mat-raised-button type="submit" color="primary" class="button-spacing">save</button>
+          <button mat-raised-button type="button" (click)="cancel()">Cancel</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+      <!--
                 <div class="row">
                     <div class="col-xs-12">
                         <label for="artist">artist</label>
@@ -52,6 +69,6 @@
           </div>
         </div>
       </div>
-      
+       -->
 </div>
 <!--  -->

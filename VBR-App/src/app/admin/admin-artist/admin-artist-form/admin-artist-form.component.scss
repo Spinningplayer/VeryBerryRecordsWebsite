@@ -2,45 +2,56 @@
     padding-top: 2rem;
 }
 
-.card {
-    background-color: #282828;
-    padding: 2rem;
-    border-radius: 12px;
-}
-
-input {
-    background-color: #1D1D1D;
+mat-card-header {
+    font-size: 28px;
     margin-bottom: 1rem;
+    margin-left: 0.25rem;
     color: white;
-}
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
 
-input:focus {
-    border-color: #282828;
-}
+// .card {
+//     background-color: #282828;
+//     padding: 2rem;
+//     border-radius: 12px;
+// }
 
-.card-header {
-    padding-left: 0;
+// input {
+//     background-color: #1D1D1D;
+//     margin-bottom: 1rem;
+//     color: white;
+// }
 
-}
+// input:focus {
+//     border-color: #282828;
+// }
 
-button {
-    border-radius: 20px;
-}
+// .card-header {
+//     padding-left: 0;
 
-.title {
-    padding-bottom: 1rem;
-}
+// }
 
-label {
-    padding-bottom: 0.25rem;
-}
+// button {
+//     border-radius: 20px;
+// }
 
-.fail {
-    color: white;
-    background-color: darkred;
-    border-color: red;
-    border: 1px;
-    border-radius: 4px;
-    padding: 0.25rem;
-    margin-bottom: 1rem;
-}
+// .title {
+//     padding-bottom: 1rem;
+// }
+
+// label {
+//     padding-bottom: 0.25rem;
+// }
+
+// .fail {
+//     color: white;
+//     background-color: darkred;
+//     border-color: red;
+//     border: 1px;
+//     border-radius: 4px;
+//     padding: 0.25rem;
+//     margin-bottom: 1rem;
+// }

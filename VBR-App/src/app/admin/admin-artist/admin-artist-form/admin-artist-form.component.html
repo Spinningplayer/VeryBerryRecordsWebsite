@@ -1,57 +1,83 @@
 <div class="container">
   <mat-card>
     <mat-card-header>
-      
+      <mat-card-title>Create or update artist</mat-card-title>
     </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="artistForm" (ngSubmit)="save()">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input cdkAutofill matInput type="text" id="name" formControlName="name">
+        </mat-form-field>
+        
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <textarea cdkAutofill matInput type="text" id="description" formControlName="description"></textarea>
+        </mat-form-field>
+        
+        <mat-form-field>
+          <mat-label>Short Description</mat-label>
+          <textarea cdkAutofill matInput type="text" id="shortDescription" formControlName="shortDescription"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>pressPic</mat-label>
+          <input cdkAutofill matInput type="text" id="pressPic" formControlName="pressPic">
+        </mat-form-field>
+        
+        <mat-form-field>
+          <mat-label>spotifyPlaylist</mat-label>
+          <input cdkAutofill matInput type="text" id="spotifyPlaylist" formControlName="spotifyPlaylist">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>spotifyPlaylist</mat-label>
+          <input cdkAutofill matInput type="text" id="spotifyPlaylist" formControlName="spotifyPlaylist">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>youtubeLink</mat-label>
+          <input cdkAutofill matInput type="text" id="youtubeLink" formControlName="youtubeLink">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>instagramLink</mat-label>
+          <input cdkAutofill matInput type="text" id="instagramLink" formControlName="instagramLink">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>facebookLink</mat-label>
+          <input cdkAutofill matInput type="text" id="facebookLink" formControlName="facebookLink">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>driveLink</mat-label>
+          <input cdkAutofill matInput type="text" id="driveLink" formControlName="driveLink">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>urlName</mat-label>
+          <input cdkAutofill matInput type="text" id="urlName" formControlName="urlName">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>spotifyId</mat-label>
+          <input cdkAutofill matInput type="text" id="spotifyId" formControlName="spotifyId">
+        </mat-form-field>
+
+        <button mat-raised-button type="submit" color="primary" class="button-spacing">save</button>
+          <button mat-raised-button type="button" (click)="cancel()">Cancel</button>
+      </form>   
+    </mat-card-content>
   </mat-card>
-    <div class="col-xl-6 col-md-6 col-xs-12">
+</div>
+    <!-- <div class="col-xl-6 col-md-6 col-xs-12">
         <div class="card">
           <div class="card-header"><h4 class="card-title">Add or Edit Artist</h4></div>
           <div class="">   
             <div class="card-block">
               <form [formGroup]="artistForm" (ngSubmit)="save()">
-                <div class="row">
-                  <div class="col-xs-12">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" formControlName="name" class="form-control">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12">
-                    <label for="description">Description</label>
-                    <input type="text" id="description" formControlName="description" class="form-control">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12">
-                    <label for="shortDescription">shortDescription</label>
-                    <input type="text" id="shortDescription" formControlName="shortDescription" class="form-control">
-                  </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                      <label for="pressPic">pressPic</label>
-                      <input type="text" id="pressPic" formControlName="pressPic" class="form-control">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                      <label for="spotifyPlaylist">spotifyPlaylist</label>
-                      <input type="text" id="spotifyPlaylist" formControlName="spotifyPlaylist" class="form-control">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <label for="youtubeLink">youtubeLink</label>
-                      <input type="text" id="youtubeLink" formControlName="youtubeLink" class="form-control">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <label for="instagramLink">instagramLink</label>
-                      <input type="text" id="instagramLink" formControlName="instagramLink" class="form-control">
-                    </div>
-                  </div>
+                
                   <div class="row">
                     <div class="col-xs-12">
                       <label for="facebookLink">facebookLink</label>
@@ -90,6 +116,4 @@
             </div>
           </div>
         </div>
-      </div>
-      
-</div>
+      </div> -->

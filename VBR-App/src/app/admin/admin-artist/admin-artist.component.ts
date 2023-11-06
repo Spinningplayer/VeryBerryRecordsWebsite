@@ -64,7 +64,7 @@ export class AdminArtistComponent implements OnInit {
           if(response != null) {
             this.artistService.getArtists()
             .then(artists => {
-              this.artists = artists as Artist[];
+              this.dataSource.data = artists as Artist[];
             })
           }
         })

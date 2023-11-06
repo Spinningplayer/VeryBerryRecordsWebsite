@@ -44,7 +44,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatGridListModule} from '@angular/material/grid-list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatSelectModule } from '@angular/material/select'
+import { MatSelectModule } from '@angular/material/select';
+import { UploadDialogComponent } from './dialogs/upload-dialog/upload-dialog.component'
 
 const appRoutes: Routes = [
   {path: 'backstage', component: AdminComponent, children: [
@@ -85,6 +86,7 @@ const appRoutes: Routes = [
     AdminShowsComponent,
     AdminShowFormComponent,
     DeleteDialogComponent,
+    UploadDialogComponent,
     
   ],
   imports: [

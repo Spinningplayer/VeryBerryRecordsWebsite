@@ -6,6 +6,7 @@ import { Artist } from '../models/artist.model';
 import {env} from '../environments/env';
 import { AuthService } from './auth.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { serialize } from 'object-to-formdata';
 
 @Injectable({
   providedIn: 'root'
@@ -98,6 +99,29 @@ export class ArtistService {
       .catch((error) => {
         console.log(error)
         this.handleError(error);
+        return null
+      })
+  }
+
+  public async uploadPicture(file: any) {
+    console.log("Uploading File.")
+    console.log(file)
+    let fData = new FormData();
+    fData.append('filename',file.name)
+    // fData.append('file', file)
+    console.log("fData:")
+    console.log(fData.get("file"))
+    return await lastValueFrom(this.http.post(
+      this.url + 'uploadPicture',
+      {"msg":"test"},
+      {headers: this.headers}))
+      .then((object) => {
+        console.log(object)
+        return true
+      })
+      .catch((error) => {
+        console.log(error)
+        this.handleError(error)
         return null
       })
   }

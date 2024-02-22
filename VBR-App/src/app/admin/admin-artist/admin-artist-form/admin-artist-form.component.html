@@ -20,16 +20,27 @@
           <textarea cdkAutofill matInput type="text" id="shortDescription" formControlName="shortDescription"></textarea>
         </mat-form-field>
 
-        <mat-form-field>
-          <mat-label>pressPic</mat-label>
-          <input cdkAutofill matInput type="text" id="pressPic" formControlName="pressPic">
-        </mat-form-field>
         
         <mat-form-field>
-          <mat-label>spotifyPlaylist</mat-label>
-          <input cdkAutofill matInput type="text" id="spotifyPlaylist" formControlName="spotifyPlaylist">
+          <div>
+            <input matInput />
+    
+            <button
+              mat-flat-button
+              color="primary"
+            >
+              Upload
+            </button>
+      
+            <input
+              type="file"
+              id="fileInput"
+              (change)="selectFile($event)"
+              name="pressPic"
+            />
+          </div>
         </mat-form-field>
-
+        
         <mat-form-field>
           <mat-label>spotifyPlaylist</mat-label>
           <input cdkAutofill matInput type="text" id="spotifyPlaylist" formControlName="spotifyPlaylist">

@@ -14,6 +14,7 @@ import { serialize } from 'object-to-formdata';
 
 export class ArtistService {
   private headers = new HttpHeaders({'content-type': 'application/json'})
+  private uploadHeaders = new HttpHeaders({})
   private url = env.serverUrl + '/artists/';
   
 
@@ -107,14 +108,13 @@ export class ArtistService {
     console.log("Uploading File.")
     console.log(file)
     let fData = new FormData();
-    fData.append('filename',file.name)
-    // fData.append('file', file)
-    console.log("fData:")
-    console.log(fData.get("file"))
+    
+    fData.append('file', file)
+    
     return await lastValueFrom(this.http.post(
       this.url + 'uploadPicture',
-      {"msg":"test"},
-      {headers: this.headers}))
+      fData,
+      {headers: this.uploadHeaders}))
       .then((object) => {
         console.log(object)
         return true

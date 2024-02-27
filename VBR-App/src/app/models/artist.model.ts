@@ -14,6 +14,7 @@ export class Artist {
     public urlName!: string;
     public shows!: Show[];
     public spotifyId!: string;
+    public spotifyListeners!: string;
 
     constructor(values: Object = {}) {
         Object.assign(this, values)

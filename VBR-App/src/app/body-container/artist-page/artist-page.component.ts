@@ -1,6 +1,6 @@
 import { Component, OnInit, SecurityContext } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Artist } from 'src/app/models/artist.model';
 import { ArtistService } from 'src/app/services/artist.service';
 
@@ -14,7 +14,7 @@ export class ArtistPageComponent implements OnInit {
   safeYoutube!: SafeResourceUrl;
   safeSpotify!: SafeResourceUrl;
 
-  constructor(private artistService: ArtistService, private route: ActivatedRoute, private sanitizer: DomSanitizer) { 
+  constructor(private artistService: ArtistService, private route: ActivatedRoute, private sanitizer: DomSanitizer, private router: Router) { 
 
   }
 
@@ -22,9 +22,11 @@ export class ArtistPageComponent implements OnInit {
     this.artistService.getArtists().then((err)=>{
       const routeParams = this.route.snapshot.paramMap;
     const artistName = String(routeParams.get('name'))
-    console.log(artistName)
+    
     this.artist = this.artistService.artists.find(artist => artist.urlName === artistName)
-    console.log(this.artist)
+    if(this.artist == undefined) {
+      this.router.navigateByUrl('/page-not-found')
+    }
     this.safeYoutube = this.sanitizer.bypassSecurityTrustResourceUrl(String(this.artist?.youtubeLink));
     this.safeSpotify = this.sanitizer.bypassSecurityTrustResourceUrl(String(this.artist?.spotifyPlaylist));
     });

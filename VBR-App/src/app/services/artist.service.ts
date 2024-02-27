@@ -6,7 +6,6 @@ import { Artist } from '../models/artist.model';
 import {env} from '../environments/env';
 import { AuthService } from './auth.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { serialize } from 'object-to-formdata';
 
 @Injectable({
   providedIn: 'root'

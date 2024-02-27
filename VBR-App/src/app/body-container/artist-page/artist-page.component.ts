@@ -19,13 +19,15 @@ export class ArtistPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const routeParams = this.route.snapshot.paramMap;
+    this.artistService.getArtists().then((err)=>{
+      const routeParams = this.route.snapshot.paramMap;
     const artistName = String(routeParams.get('name'))
-
+    console.log(artistName)
     this.artist = this.artistService.artists.find(artist => artist.urlName === artistName)
-
+    console.log(this.artist)
     this.safeYoutube = this.sanitizer.bypassSecurityTrustResourceUrl(String(this.artist?.youtubeLink));
     this.safeSpotify = this.sanitizer.bypassSecurityTrustResourceUrl(String(this.artist?.spotifyPlaylist));
+    });
   }
 
 }

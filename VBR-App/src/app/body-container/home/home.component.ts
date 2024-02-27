@@ -14,6 +14,6 @@ export class HomeComponent implements OnInit {
   }
 
   public goToArtist() {
-    this._router.navigateByUrl('/artist/ara')
+    this._router.navigateByUrl('/artist/melodyfrostxoxo')
   }
 }

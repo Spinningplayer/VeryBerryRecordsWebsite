@@ -11,7 +11,6 @@ export class DeleteDialogComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<DeleteDialogComponent>) { }
 
   ngOnInit(): void {
-    console.log('çomponent created')
   }
 
   delete() {

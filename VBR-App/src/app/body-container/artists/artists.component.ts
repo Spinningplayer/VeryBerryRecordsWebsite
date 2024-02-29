@@ -15,7 +15,6 @@ export class ArtistsComponent implements OnInit {
 
   ngOnInit(): void {
     this.artistService.getArtists().then(response => {
-      console.log(response)
       this.artists = response!
     }) 
   }

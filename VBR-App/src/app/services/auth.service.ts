@@ -30,7 +30,6 @@ export class AuthService {
   .then(response => {
     localStorage.setItem('currentUser', JSON.stringify(response))
     this.currenUserSubject.next(response as User)
-    console.log(response)
     return response as User;
   }).catch(error => {
     console.log(error)

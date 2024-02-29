@@ -17,7 +17,6 @@ export class AgendaComponent implements OnInit {
     .then(shows => {
       this.shows = shows as Show[];
     })
-    console.log(this.shows[0].artistName)
   }
 
 }

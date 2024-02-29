@@ -35,7 +35,6 @@ export class AdminArtistFormComponent implements OnInit {
     if(artistName != "new"){
       this.artistService.getArtists().then(
         artists => {
-          console.log(artists?.find(a=>a.urlName == artistName))
           this.artist = artists?.find(a=>a.urlName == artistName) as Artist
           this.artistForm.patchValue(this.artist);
         }
@@ -63,7 +62,6 @@ export class AdminArtistFormComponent implements OnInit {
         // if(this.artist.pressPic !== artist.pressPic) {
           this.artistService.uploadPicture(this.file)
           .then(response => {
-            console.log(response)
           })
         // }
       } else {
@@ -77,7 +75,6 @@ export class AdminArtistFormComponent implements OnInit {
         })
         this.artistService.uploadPicture(this.file)
         .then(response => {
-          console.log(response)
         })
       }
 

@@ -53,7 +53,6 @@ export class AdminShowFormComponent implements OnInit {
   }
 
   save() {
-    console.log(this.showForm.controls)
     if(this.showForm.valid) {
         
       let artistId = this.showForm.controls['artist'].value as string;
@@ -66,11 +65,9 @@ export class AdminShowFormComponent implements OnInit {
         artistName: selectedArtist?.name,
         ticketLink: this.showForm.controls['ticketLink'].value
       })
-      console.log(showModel.artistName)
       if(this.editMode) {
         this.showService.updateShow(showModel, this.show._id)
         .then(response => {
-          console.log(response)
           this._router.navigateByUrl('/backstage/show')
         })
         .catch(error => {
@@ -80,7 +77,6 @@ export class AdminShowFormComponent implements OnInit {
       } else {
         this.showService.postShow(showModel)
         .then(response => {
-          console.log(response)
           this._router.navigateByUrl('/backstage/show');
         })
         .catch(error => {

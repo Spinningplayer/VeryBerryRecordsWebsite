@@ -24,18 +24,13 @@ export class AdminLoginComponent implements OnInit {
   }
 
   login() {
-    console.log("username: "+ this.loginForm.controls['username'].value)
-    console.log("password: "+ this.loginForm.controls['password'].value)
     this.authService.login(this.loginForm.controls['username'].value!, this.loginForm.controls['password'].value!)
     .then(user => {
-      console.log(user)
       if(user.authToken != null) {
         let route = this.route.snapshot.queryParams['returnUrl'] || '/backstage/dashboard';
-        console.log(route);
        this._router.navigateByUrl(route);
        this.loginFailed = false;
       } else {
-        console.log("login failed");
         this.loginFailed = true;
       }
     })

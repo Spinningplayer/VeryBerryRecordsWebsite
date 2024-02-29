@@ -104,8 +104,6 @@ export class ArtistService {
   }
 
   public async uploadPicture(file: any) {
-    console.log("Uploading File.")
-    console.log(file)
     let fData = new FormData();
     
     fData.append('file', file)
@@ -115,7 +113,6 @@ export class ArtistService {
       fData,
       {headers: this.uploadHeaders}))
       .then((object) => {
-        console.log(object)
         return true
       })
       .catch((error) => {

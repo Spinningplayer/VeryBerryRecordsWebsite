@@ -1,5 +1,5 @@
 export const env = {
     production: false,
-    serverUrl: 'http://veryberryrecords.com:3000'
+    serverUrl: 'http://192.168.178.131:3000'
   };
   
